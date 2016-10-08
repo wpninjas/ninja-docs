@@ -64,14 +64,17 @@ function ninja_docs_build_archive_page() {
     }
 }
 
-add_action( 'wp_enqueue_scripts', 'ninja_docs_archive_scripts_masonry' );
 function ninja_docs_archive_scripts_masonry() {
-    wp_enqueue_script('masonry');
-    //wp_enqueue_style('masonry’, get_template_directory_uri().'/css/’);
+    global $post;
+    if( is_page() && has_shortcode( $post->post_content, 'docs_list') ) {
+        wp_enqueue_script('masonry');
+    }
 }
+add_action( 'wp_enqueue_scripts', 'ninja_docs_archive_scripts_masonry' );
 
 function ninja_docs_masonry_init() {
-  if ( is_page( 'documentation' ) ) { ?>
+    global $post;
+  if ( is_page() && has_shortcode( $post->post_content, 'docs_list') ) { ?>
     <script>
       jQuery( document ).ready( function() {
         //set the container that Masonry will be inside of in a var
