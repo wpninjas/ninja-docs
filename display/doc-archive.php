@@ -1,5 +1,5 @@
 <?php
-
+add_filter( 'widget_text', 'do_shortcode' );
 function ninja_docs_get_arhcive() {
     $content = '';
     if( current_user_can( 'manage_options' ) ) {
@@ -68,6 +68,9 @@ function ninja_docs_archive_scripts_masonry() {
     global $post;
     if( is_page() && has_shortcode( $post->post_content, 'docs_list') ) {
         wp_enqueue_script('masonry');
+    }
+    if( get_post_type() == 'ninja_docs_cpt' || has_shortcode( $post->post_content, 'docs_list') ) {
+        wp_enqueue_style( 'docs_style', NINJA_DOCS_URL . '/css/style.css' );
     }
 }
 add_action( 'wp_enqueue_scripts', 'ninja_docs_archive_scripts_masonry' );

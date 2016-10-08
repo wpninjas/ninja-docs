@@ -28,7 +28,7 @@ function ninja_docs_cpt()
     'has_archive' => false,
     'hierarchical' => true,
     'menu_events' => null,
-    'rewrite' => array("slug" => "docs"), // Permalinks format
+    'rewrite' => array( "slug" => apply_filters( 'nd_doc_slug', 'docs' ) ), // Permalinks format
     'menu_icon' => 'dashicons-book-alt',
     'taxonomies' => array('doc_tags, doc_category'),
     'supports' => array( 'title', 'editor', 'excerpt', 'thumbnail', 'custom-fields', 'page-attributes', 'genesis-cpt-archives-settings', 'genesis-layouts' ),

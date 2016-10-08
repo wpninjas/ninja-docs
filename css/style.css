@@ -1,0 +1,33 @@
+.ninja_docs_list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.ninja_docs_list * {
+    box-sizing: border-box;
+}
+.ninja_docs_list .doc-category {
+    list-style: none;
+    margin: 1%;
+    padding: 0;
+    width: 31.3333333%;
+}
+.ninja_docs_list .doc-category h2 {
+    margin: 0 0 10px;
+}
+
+.ninja_docs_list .doc-category {
+    background: #f1f1f1;
+    padding: 20px;
+}
+.ninja_docs_list .doc-category li {
+    margin: 0 0 0 20px;
+}
+
+.single-ninja_docs_cpt .ninja_docs_list .doc-category {
+    margin: 0 0 20px;
+    width: 100%;
+}
+.single-ninja_docs_cpt .ninja_docs_list .doc-category li {
+    margin: 0 0 0 10px;
+}
