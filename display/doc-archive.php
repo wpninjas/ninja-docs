@@ -1,6 +1,6 @@
 <?php
 add_filter( 'widget_text', 'do_shortcode' );
-function ninja_docs_get_arhcive() {
+function ninja_docs_get_archive() {
     $content = '';
     if( current_user_can( 'manage_options' ) ) {
         //$content .= ninja_docs_get_search_forms( $query = '' );
@@ -56,11 +56,11 @@ function ninja_docs_get_arhcive() {
     return $content;
 }
 
-add_shortcode( 'docs_list', 'ninja_docs_get_arhcive' );
+add_shortcode( 'docs_list', 'ninja_docs_get_archive' );
 
 function ninja_docs_build_archive_page() {
     if ( is_page( 'documentation' ) ) {
-        echo ninja_docs_get_arhcive();
+        echo ninja_docs_get_archive();
     }
 }
 
